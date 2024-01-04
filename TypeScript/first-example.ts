@@ -21,4 +21,5 @@ user = {
 };
 
 //array type
-let hobbies: Array<string>;
+let hobbies: string[];
+hobbies = ["sleeping", "cooking", "reading"];
