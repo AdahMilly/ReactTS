@@ -23,3 +23,32 @@ user = {
 //array type
 let hobbies: string[];
 hobbies = ["sleeping", "cooking", "reading"];
+
+//functions
+function add(a: number, b: number): number {
+  const res = a + b;
+  return res;
+}
+
+//custom types - type alias
+type Addfn = (a: number, b: number) => number;
+
+//interfaces
+interface User {
+  name: string;
+  age: number;
+  isAdmin: boolean;
+  id: string | number;
+}
+
+//merging types
+type Admin = {
+  permissions: string[];
+};
+type AppUser = {
+  userName: string;
+};
+type AppAdmin = Admin & AppUser;
+
+//literal types admin/user/editor
+let role: 'admin' | 'user' | 'editor';
