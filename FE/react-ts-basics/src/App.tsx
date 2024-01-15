@@ -1,9 +1,21 @@
-import { CourseGoal } from "./components/CourseGoal";
+import Header from "./components/Header.tsx";
+import Shop from "./components/Shop.tsx";
+import Product from "./components/Product.tsx";
+import { DUMMY_PRODUCTS } from "./dummy-products.ts";
 
-export default function App() {
+function App() {
   return (
-    <main>
-      <CourseGoal title="Learn ReactTs" description="TS basics in React" />
-    </main>
+    <>
+      <Header />
+      <Shop>
+        {DUMMY_PRODUCTS.map((product) => (
+          <li key={product.id}>
+            <Product {...product} />
+          </li>
+        ))}
+      </Shop>
+    </>
   );
 }
+
+export default App;
